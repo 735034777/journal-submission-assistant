@@ -1,0 +1,20 @@
+# Track only reviewed, reusable skill files. Keep real task data outside this repo.
+*
+!*/
+!/.gitignore
+!/README.md
+!/SKILL.md
+!/agents/openai.yaml
+!/assets/author-profile.template.yaml
+!/assets/submission.template.json
+!/assets/elsevier-competing-interests.template.docx
+!/references/registration.md
+!/references/submission.md
+!/references/classification-matching.md
+!/references/applied-energy.md
+!/references/applied-energy-registration.md
+!/references/applied-energy.rules.json
+!/references/ieee-tim-registration.md
+!/references/competing-interests.md
+!/scripts/check_submission.py
+!/tests/test_submission_checks.py

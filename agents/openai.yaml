@@ -1,0 +1,4 @@
+interface:
+  display_name: "论文投稿助手"
+  short_description: "辅助期刊账号注册、论文投稿资料整理与表单填写，含爱思唯尔期刊实例"
+  default_prompt: "使用 $journal-submission-assistant 帮我注册目标期刊账号，或整理并填写论文投稿信息。"

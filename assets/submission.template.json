@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "_instructions": "在任务目录填写；null/unknown 表示尚未确认。作者与单位 ID 是本地关联键；source_author_order 必须从原稿/作者说明独立提取。脚本不读取正文，不证明网页已填写或可正式投稿。",
+  "journal": {
+    "name": "Applied Energy",
+    "code": "APEN",
+    "official_url": "https://www.sciencedirect.com/journal/applied-energy",
+    "submission_url": "https://submit.elsevier.com/APEN",
+    "guide_checked_on": null
+  },
+  "article_type": null,
+  "special_issue": null,
+  "title": null,
+  "abstract": null,
+  "keywords": [],
+  "highlights": [],
+  "authors": [
+    {
+      "id": "author-1",
+      "given_name": null,
+      "family_name": null,
+      "email": null,
+      "orcid": null,
+      "affiliation_ids": [
+        "affiliation-1"
+      ],
+      "credit_roles": [],
+      "present_address": null
+    }
+  ],
+  "affiliations": [
+    {
+      "id": "affiliation-1",
+      "institution": null,
+      "department": null,
+      "postal_address": null,
+      "country_or_region": null
+    }
+  ],
+  "source_author_order": [],
+  "corresponding_author_id": null,
+  "submitting_author_id": null,
+  "funding": {
+    "status": "unknown",
+    "sources": []
+  },
+  "declarations": {
+    "competing_interests": {
+      "status": "unknown",
+      "statement": null
+    },
+    "ethics": {
+      "status": "unknown",
+      "statement": null,
+      "approval_reference": null
+    },
+    "all_authors_approved": null,
+    "not_under_review_elsewhere": null,
+    "ai_use": {
+      "status": "unknown",
+      "statement": null
+    }
+  },
+  "data_availability": {
+    "status": "unknown",
+    "statement": null,
+    "links": []
+  },
+  "files": [],
+  "reviewer_preferences": {
+    "suggested": [],
+    "opposed": []
+  },
+  "publication_preferences": {
+    "open_access": null,
+    "preprint_posting": null,
+    "license": null
+  },
+  "journal_questions": [],
+  "provenance": [],
+  "open_questions": []
+}
