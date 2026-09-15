@@ -14,22 +14,68 @@
 
 ## 安装与使用
 
-将 `REPOSITORY_URL` 替换为本仓库的克隆地址；私有仓库需要相应 GitHub 访问权限。目标目录应尚不存在。
+使用者在自己的 Codex 中安装，并提供自己的作者资料、论文及期刊账号。
 
-```sh
-git clone REPOSITORY_URL ~/.codex/skills/journal-submission-assistant
-```
+### 1. 安装 skill
 
-在可读取该 skill 的 Codex 任务中使用：
+把下面这句话发给 Codex：
 
 ```text
-使用 $journal-submission-assistant，参考我提供的作者资料和论文，
-填写指定期刊的投稿草稿，全程记录，停在最终提交前供我审批。
+使用 $skill-installer 安装这个仓库中的 skill：
+https://github.com/735034777/journal-submission-assistant
+SKILL.md 位于仓库根目录。
 ```
 
-开始前把 [作者 YAML 模板](assets/author-profile.template.yaml) 和 [投稿 JSON 模板](assets/submission.template.json) 复制到 skill 目录以外的任务目录，再填写真实资料。作者 YAML 仅列历史 APEN 注册必填项；其他期刊以当前页面为准。投稿 JSON 默认指向 Applied Energy，使用其他期刊时须更新期刊信息并核查相应规则。
+安装后若未显示，重启 Codex。官方支持从其他 GitHub 仓库安装 skill，见 [OpenAI 安装说明](https://learn.chatgpt.com/docs/build-skills)。
+
+也可以在已安装 Git 的 macOS / Linux 终端中手动安装；目标目录应尚不存在：
+
+```sh
+mkdir -p ~/.agents/skills
+git clone https://github.com/735034777/journal-submission-assistant.git \
+  ~/.agents/skills/journal-submission-assistant
+```
+
+这里使用当前官方文档列出的用户级目录 `~/.agents/skills`。若已经通过安装器安装并被 Codex 识别，无需再手动安装一份。
+
+### 2. 准备自己的资料
+
+- 注册账号：提供目标期刊、姓名、邮箱、称谓、国家或地区、单位和研究方向，具体必填项以当前注册页面为准。
+- 填写投稿草稿：再提供论文文件、作者名单与顺序、通讯作者、单位、基金及声明信息。缺项由助手集中询问。
+
+可以直接提供资料，也可以让 Codex 把 [作者 YAML 模板](assets/author-profile.template.yaml) 和 [投稿 JSON 模板](assets/submission.template.json) 复制到论文项目目录后协助填写。真实资料存放在 skill 目录以外，不写回公开仓库。
+
+作者 YAML 仅列历史 APEN 注册必填项；其他期刊以当前页面为准。投稿 JSON 默认指向 Applied Energy，使用其他期刊时须更新期刊信息并核查相应规则。
 
 `null` 和 `unknown` 表示待确认，不能解释成“无基金”“无利益冲突”或作者已批准。密码、验证码及验证链接不写入资料和日志。
+
+### 3. 发出任务
+
+注册账号示例：
+
+```text
+使用 $journal-submission-assistant 帮我注册 Energy 的投稿账号。
+先检查需要哪些资料，缺项集中询问，全程记录。
+```
+
+填写投稿草稿示例，将方括号内容替换为自己的论文目录：
+
+```text
+使用 $journal-submission-assistant，
+根据这个目录中的论文和作者资料，填写 Energy 投稿草稿：
+[填写自己的论文目录]
+
+全程记录，核对上传文件和填写内容，
+停在最终提交前供我审批。
+```
+
+示例期刊可替换成自己的目标期刊；助手会重新核查该期刊指南与表单。
+
+### 4. 浏览器与账号要求
+
+实际填写网页需要使用者的 Codex 具备浏览器操作能力，并使用其自己的期刊账号及相应访问授权。安装这个 skill 不会自动安装浏览器工具，也不会共享仓库维护者的账号或登录状态。
+
+没有浏览器工具时，仍可整理材料、检查缺项和生成填写对照表；此时不能报告网页已填写或材料已上传。遇到需要本人处理的密码、验证码或邮箱验证步骤，按当前工具要求交接后继续。
 
 ## 本地检查
 
